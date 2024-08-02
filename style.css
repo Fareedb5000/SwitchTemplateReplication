@@ -1,0 +1,519 @@
+/* Base styles */
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+.light .dark-mode-only,
+.dark .light-mode-only {
+    display: none;
+}
+
+.dark .dark-mode-only,
+.light .light-mode-only {
+    display: block;
+}
+
+
+/* Default to dark mode */
+body.dark {
+    background-color: rgb(24, 37, 56); /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+}
+
+/* Light mode styles */
+body.light {
+    background-color: #f5f5f5; /* Light mode background color */
+    color: #333; /* Light mode text color */
+}
+
+/* Header styles */
+.site-header {
+    height: 60px;
+    transition: background-color 0.3s;
+}
+
+.site-header.dark {
+    background-color: rgb(24, 37, 56);; /* Dark mode header background */
+}
+
+.site-header.light {
+    background-color: #f5f5f5; /* Light mode header background */
+}
+
+/* Footer styles */
+.site-footer {
+    background-color: rgb(24, 37, 56); /* Default to dark mode footer background */
+    color: #fff; /* Default to dark mode text color */
+    padding: 40px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.footer-social list-reset.light{
+    background-color: #ffffff; /* Light mode footer background */
+    color: #333; /* Light mode text color */
+}
+
+.intro-section.light{
+    background-color: #f5f5f5; /* Light mode footer background */
+    color: #333; /* Light mode text color */
+
+}
+.call-to-action.light{
+    background-color: #f5f5f5; /* Light mode footer background */
+    color: #333; /* Light mode text color */
+}
+/* Switch styles */
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    border-radius: 25px;
+    background-color: #ccc;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.4s;
+}
+
+.slider::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    left: 2px;
+    bottom: 2px;
+    transition: transform 0.4s;
+}
+
+input:checked + .slider::before {
+    background-color: #424ca5;
+}
+
+input:checked + .slider::after {
+    transform: translateX(25px);
+}
+
+/* Intro section styles */
+.intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: rgb(24, 37, 56);
+}
+
+.intro-container, .intro-inner {
+    display: flex;
+    width: 100%;
+}
+
+.intro-text {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.intro-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.intro-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.intro-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-label {
+    font-size: 16px;
+}
+
+/* Media section styles */
+.intro-media {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-illustration img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    max-height: 100%;
+}
+
+/* Light mode and dark mode image visibility */
+.dark .intro-illustration img.light-mode-only {
+    display: none;
+}
+
+.light .intro-illustration img.dark-mode-only {
+    display: none;
+}
+
+.dark .intro-illustration img.dark-mode-only {
+    display: block;
+}
+
+.light .intro-illustration img.light-mode-only {
+    display: block;
+}
+
+
+.light .media-container img.light-mode-only {
+    display: block;
+}
+
+.media-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    max-width: 300px;
+    z-index: 2;
+    
+}
+
+.media-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 300px
+}
+
+.intro-illustration {
+    position: relative;
+    z-index: 1;
+}
+
+/* Features section styles */
+.text-center {
+    text-align: center;
+}
+
+.header-content, .feature-description {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-description, .feature-text {
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+.features-section {
+    padding: 40px 20px;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-header, .features-list {
+    width: 100%;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    margin-right: -900px;
+}
+
+.feature-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    margin-right: -44000px;
+
+}
+
+.feature-item-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.features-image img, .feature-icon img {
+    width: 300px;
+    height: 40vh;
+    margin: 10px;
+    align-items: center;
+    margin-left: 160px;
+}
+
+/* Other common styles */
+.label {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: -10000px;
+    margin-left: 120px;
+    font-size: 14px;
+    color: #fff;
+    font-family: "Kanit", sans-serif;
+}
+
+/* Call-to-Action Section Styles */
+.call-to-action {
+    padding: 60px 20px; /* Add padding for spacing */
+    background-color: rgb(24, 37, 56); /* Background color for CTA section */
+    color: #fff; /* Text color */
+    text-align: center; /* Center align text */
+}
+
+.cta-container {
+    max-width: 1200px; /* Max width for container */
+    margin: 0 auto; /* Center align the container */
+}
+
+.cta-inner {
+    padding: 20px; /* Padding inside the inner container */
+}
+
+.cta-title {
+    font-size: 2.5em; /* Title font size */
+    margin-bottom: 20px; /* Space below the title */
+    font-weight: bold; /* Bold font weight */
+}
+
+.cta-description {
+    font-size: 1.2em; /* Description font size */
+    margin-bottom: 30px; /* Space below the description */
+    line-height: 1.6; /* Line height for better readability */
+}
+
+.cta-button {
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: rgb(24, 37, 56); /* Dark background for a modern look */
+    color: #fff; /* Light text color for contrast */
+    padding: 40px 20px; /* Generous padding for space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-brand a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.footer-logo-light, .footer-logo-dark {
+    height: 40px; /* Consistent logo height */
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-light {
+    display: block;
+}
+
+.footer-logo-dark {
+    display: none;
+}
+
+.footer-links, .footer-social {
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.footer-links li, .footer-social li {
+    margin: 0 10px;
+    list-style-type: none;
+}
+
+.footer-links a {
+    color: #bbb; /* Light grey for less emphasis */
+    transition: color 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: #fff; /* Highlight on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+}
+
+.footer-social a {
+    display: inline-block;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1); /* Slightly larger on hover */
+}
+
+
+.footer-social svg {
+    fill: currentColor; /* Inherit color from parent */
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-brand, .footer-links, .footer-social {
+        margin-bottom: 20px;
+    }
+}
+
+/* Dark mode */
+body.dark .footer-logo-light {
+    display: none;
+}
+
+body.dark .footer-logo-dark {
+    display: block;
+}
+
+body.dark .footer-links a {
+    color: #fff;
+}
+
+body.dark .footer-links a:hover {
+    color: #fff;
+}
+
+/* Light mode */
+body.light .footer-logo-dark {
+    display: none;
+}
+
+body.light .footer-logo-light {
+    display: block;
+}
+
+body.light .footer-links a {
+    color: #fff;
+}
+
+body.light .footer-links a:hover {
+    color: #000;
+}
+/* Keyframes for scaling animation */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply animation to intro media image and illustration */
+.intro-media img, .media-container img {
+    animation: scaleUp 1s ease-out forwards; /* 1s duration, ease-out timing, forward fill mode */
+    opacity: 0; /* Initial opacity for fade-in effect */
+}
+@keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px); /* Start slightly to the right */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* End at original position */
+    }
+  }
+  
+  .feature-item {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+  }
+  
+  .feature-item.fade-in {
+    opacity: 1;
+    animation: fadeInRight 0.8s ease-out forwards; /* Apply the animation */
+  }
+  
